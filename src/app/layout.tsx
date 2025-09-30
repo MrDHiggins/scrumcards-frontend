@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { NavMenu } from "@/components/navigation/nav-menu";
 
 export const metadata: Metadata = {
   title: "ScrumdCards",

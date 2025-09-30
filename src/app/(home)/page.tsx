@@ -1,9 +1,14 @@
+import { NavMenu } from "@/components/navigation/nav-menu";
+
 export default function Home() {
   return (
 <div className="relative min-h-screen flex flex-col">
+   <section className="">
+    <NavMenu />
+   </section>
   {/* <!-- TOP --> */}
   <div className="bg-[#1a2936] flex-1 flex items-center justify-center text-white relative">
-    
+   
   </div>
 
   {/* <!-- CURVE + BOTTOM --> */}
