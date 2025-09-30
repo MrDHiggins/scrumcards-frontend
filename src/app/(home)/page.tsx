@@ -1,13 +1,18 @@
+import { NavMenu } from "@/components/navigation/nav-menu";
+
 export default function Home() {
   return (
 <div className="relative min-h-screen flex flex-col">
+   <section className="">
+    <NavMenu />
+   </section>
   {/* <!-- TOP --> */}
-  <div className="bg-[#223142] flex-1 flex items-center justify-center text-white relative">
-    
+  <div className="bg-[#1a2936] flex-1 flex items-center justify-center text-white relative">
+   
   </div>
 
   {/* <!-- CURVE + BOTTOM --> */}
-  <div className="bg-[#0f172a] flex-1 relative flex items-center justify-center text-white">
+  <div className="bg-[#28323b] flex-1 relative flex items-center justify-center text-white">
     {/* <!-- Curve --> */}
     <svg
       className="absolute top-0 left-0 w-full h-24 -translate-y-1"
@@ -16,7 +21,7 @@ export default function Home() {
       preserveAspectRatio="none"
     >
       <path
-        fill="#223142"
+        fill="#1a2936"
         d="M0,64 C360,180 1080,-50 1440,80 L1440,0 L0,0 Z"
       />
     </svg>
