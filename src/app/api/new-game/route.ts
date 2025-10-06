@@ -8,6 +8,7 @@ export async function POST(request: Request) {
 
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 5000); 
+    console.log("Backend URL:", process.env.NEXT_PUBLIC_API_URL);
 
     const backendResponse = await fetch(`${backendUrl}/sessions?host_id=${data.host_id}`, {
       method: "POST",

@@ -1,12 +1,17 @@
 interface GamePageProps {
-  params: Promise<{ sessionId: string }>
+  params: { sessionId: string }
 }
 
 export default async function GamePage({ params }: GamePageProps) {
   const { sessionId } = await params
-  const res = await fetch(`http://localhost:8080/sessions/${sessionId}`, {
+  const backendUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
+
+  console.log("Fetching session from:", `${backendUrl}/sessions/${sessionId}`);
+  
+  const res = await fetch(`${backendUrl}/sessions/${sessionId}`, {
     cache: "no-store",
   });
+  
 
   if (!res.ok) {
     return (
