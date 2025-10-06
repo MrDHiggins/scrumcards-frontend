@@ -2,6 +2,11 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
+  // Only enable password gate in production
+  if (process.env.NODE_ENV !== "production") {
+    return NextResponse.next();
+  }
+
   const BASIC_AUTH = process.env.BASIC_AUTH || "";
   const [user, pwd] = BASIC_AUTH.split(":");
 
