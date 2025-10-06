@@ -1,9 +1,10 @@
 interface GamePageProps {
-  params: { sessionId: string }
+  params: Promise<{ sessionId: string }>
 }
 
 export default async function GamePage({ params }: GamePageProps) {
-  const res = await fetch(`http://localhost:8080/sessions/${params.sessionId}`, {
+  const { sessionId } = await params
+  const res = await fetch(`http://localhost:8080/sessions/${sessionId}`, {
     cache: "no-store",
   });
 
